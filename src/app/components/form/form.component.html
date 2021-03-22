@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<br/>
+<div class="main-div">
+<form (ngSubmit)="save()" ngNativeValidate>
+
+    <mat-card class="example-card">
+        <div *ngIf="error" class="center error">
+            <strong>Error: </strong>{{error}}
+        </div>
+        <mat-card-header class="card-header">
+            <mat-card-title>
+                <h1>Editar Sucursal {{ datos.nombreColaborador }}</h1>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-content">
+            <mat-form-field color="accent" class="form-field" appearance="fill">
+                <mat-label>Seleccione una sucursal</mat-label>
+                <mat-select [(ngModel)]="datos.idSucursal" name="idSucursal" required>
+                  <mat-option *ngFor="let sucursal of sucursales" [value]="sucursal.id"> 
+                    {{ sucursal.nombreSucursal }}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+          <mat-form-field class="form-field">
+            <mat-label>Distancia</mat-label>
+            <input min="0" type="number" [(ngModel)]="datos.distancia" name="distancia" matInput placeholder="Distancia" required>
+        </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions class="card-actions">
+            <button mat-flat-button color="accent">Guardar</button>
+            <a mat-stroked-button routerLink="/colaboradores">Cancelar</a>
+        </mat-card-actions>
+    </mat-card>
+</form>
+
+</div>

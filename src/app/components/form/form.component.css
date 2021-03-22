@@ -1,0 +1,52 @@
+.center{
+    width: 75%;
+    margin: auto;
+  }
+  
+  .main-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .example-card {
+    width: 700px;
+    padding: 3em 0em 3em 0em;
+  }
+  .card-header {
+    justify-content: center;
+    align-items: center;
+  }
+  .card-content {
+    width: 100%;
+  }
+
+  .card-actions{
+    width: 85%;
+    margin-left: 10em;
+
+  }
+
+
+  .table {
+    width: 53%;
+    margin-left: 320px;
+  }
+
+  .form-field {
+    width: 60%;
+    margin-left: 10em;
+  }
+  .mat-card {
+    box-shadow: none;
+  }
+  .error {
+      width: 55%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #a94442;
+background-color: #f2dede;
+border-color: #ebccd1;
+}

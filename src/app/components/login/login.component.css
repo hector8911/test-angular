@@ -1,0 +1,46 @@
+.center{
+    width: 75%;
+    margin: 10px auto;
+  }
+  
+  .main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    max-width: 80%;
+    min-width: 50%;
+  }
+
+  .example-card {
+    max-width: 500px;
+    padding: 3em 0em 3em 0em;
+
+  }
+  .card-header {
+    justify-content: center;
+
+    align-items: center;
+  }
+  .card-content {
+    width: 410px;
+  }
+  table {
+    width: 100%;
+  }
+
+  .form-field {
+    width: 90%;
+    padding: 10px 20px 10px 20px;
+  }
+  .btn-login {
+    width: 88%;
+    height: 60px;
+    margin-left: 26px;
+  }
+
+  .eye{
+    cursor: pointer;
+  }

@@ -1,0 +1,12 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row> 
+    <a mat-button routerLink="/home"><mat-icon>home</mat-icon></a>
+     <span class="row user-span"> {{ user }}</span>
+    <span class="example-spacer"></span>
+     <a mat-button class="link" routerLinkActive="active" routerLink="/colaboradores"><mat-icon>group</mat-icon>Colaboradores</a>
+     <a mat-button class="link" routerLinkActive="active" routerLink="/reporte"><mat-icon>library_books</mat-icon>Reporte</a>
+     <a mat-button class="link" routerLinkActive="active" *ngIf="rol == 'jefe'" [routerLink]="['/viajes']"><mat-icon>card_travel</mat-icon>Registrar viaje</a>
+     <a mat-button class="link" (click)="logout()"><mat-icon>exit_to_app</mat-icon>Salir</a>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<br/>
+<div class="main-div">
+      <mat-card class="example-card">
+          <mat-card-header class="card-header">
+              <mat-card-title>
+                  <h1>Sucursales por Colaborador</h1>
+              </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="card-content">
+            <mat-form-field color="accent" class="form-field" appearance="fill">
+              <mat-label>Colaborador</mat-label>
+              <mat-select [(ngModel)]="colaboradorDdl" name="colaboradorDdl" >
+                <mat-option  *ngFor="let colaborador of colaboradores" (click)="showSucursales(colaborador.id)" [value]="colaborador.id">
+                  {{ colaborador.nombreColaborador }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br/>
+            <mat-card *ngIf="dataSource?.length">
+              <mat-card-header class="card-header">
+                <mat-card-subtitle><h2>Sucursales</h2></mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content class="card-content">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z3 table">
+                    <ng-container matColumnDef="option">
+                        <th width="5px" mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef="let sucursal"> 
+                            <button mat-button [routerLink]="['/colaboradores/',colaboradorDdl,sucursal.idSucursal]" type="button"><mat-icon>edit</mat-icon></button>
+                        </td>
+                      </ng-container>
+                    <ng-container matColumnDef="nombreSucursal">
+                      <th mat-header-cell *matHeaderCellDef> Sucursal </th>
+                      <td mat-cell *matCellDef="let sucursal"> {{ sucursal.nombreSucursal }} </td>
+                      <td mat-footer-cell *matFooterCellDef></td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="distancia">
+                      <th mat-header-cell *matHeaderCellDef> Distancia </th>
+                      <td mat-cell *matCellDef="let sucursal"> {{ sucursal.distancia }} </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let sucursal; columns: displayedColumns;"></tr>
+                  </table>
+              </mat-card-content>
+          </mat-card>
+          </mat-card-content>
+      </mat-card>
+</div>

@@ -1,0 +1,15 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .user-span {
+    font-size: 15px;
+  }
+  .name {
+    font-weight: bold;
+  }
+  .active {
+    background: #c6bebe2e;
+  }
+  .link {
+    padding: 12px 10px 12px 10px;
+  }

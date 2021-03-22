@@ -1,0 +1,42 @@
+<div class="main-div">
+    <form (submit)="submitLogin()">
+        <mat-card class="example-card">
+            <mat-card-header class="card-header">
+                <mat-card-title>
+                    <h1>LOGIN</h1>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="card-content">
+                <table>
+                    <tr>
+                        <td>
+                            <mat-form-field color="accent" class="form-field">
+                                <mat-label>Usuario</mat-label>
+                                <input [(ngModel)]="user" name="user" autocomplete="off" matInput placeholder="Usuario"
+                                    required>
+                                <mat-icon matSuffix>account_circle</mat-icon>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field color="accent" class="form-field">
+                                <input [(ngModel)]="pass" matInput placeholder="Contraseña"
+                                    [type]="hide ? 'password' : 'text'" name="pass" required>
+                                <mat-icon class="eye" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+                                    'visibility'}}
+                                </mat-icon>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                </table>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button class="btn-login" color="accent">Iniciar Sesión</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+
+
+</div>

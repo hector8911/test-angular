@@ -1,6 +1,9 @@
 <div class="main-div">
     <form (submit)="submitLogin()">
         <mat-card class="example-card">
+            <div *ngIf="error" class="center error">
+                <strong>Error: </strong>{{error}}
+            </div>
             <mat-card-header class="card-header">
                 <mat-card-title>
                     <h1>LOGIN</h1>

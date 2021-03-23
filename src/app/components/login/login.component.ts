@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   user: string = "";
   pass: string = "";
   hide = true;
+  error = "";
 
   constructor(service: DataService, router: Router, cookie: CookieService) {
     this.service = service;
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);        
       }
       else
-        alert("Usuario o contraseña invalida");
+        this.error = "Usuario o contraseña incorrecta";
     });
   }
 
